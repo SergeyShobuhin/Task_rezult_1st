@@ -56,7 +56,7 @@ void ShowStringMinFourSumbol(string[] array)
             sortIterator++;
         }
     }
-    Console.WriteLine($"Строки в которых меньше 4 символов следующие: [{string.Join(",", sortArray)}] ");
+    Console.WriteLine($"Строки в которых меньше 4 символов следующие: ['{string.Join("', '", sortArray)}'] ");
 }
 
 
