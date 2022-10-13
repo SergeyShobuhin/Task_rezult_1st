@@ -5,6 +5,7 @@ Console.WriteLine("Введите элементы массива по одно�
 
 var array = GetArray(); // функция через которую заносим элементы в массив
 PrintArrayToConsole(array); // функция которая показывает исходный массив
+ShowStringMinFourSumbol(array); // функция которая покажет итоговый массив
 
 
 string[] GetArray()
@@ -28,5 +29,38 @@ void PrintArrayToConsole(string[] array)
     }
     Console.WriteLine($"Ваш массив [{string.Join(",", array)}] ");
 }
+
+
+
+void ShowStringMinFourSumbol(string[] array)
+{
+    //счетаем длинну под новый массив 
+    var count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            count++;
+        }
+
+    }
+
+    //заносим элементы в новый массив
+    var sortArray = new string[count];
+    int sortIterator = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            sortArray[sortIterator] = array[i];
+            sortIterator++;
+        }
+    }
+    Console.WriteLine($"Строки в которых меньше 4 символов следующие: [{string.Join(",", sortArray)}] ");
+}
+
+
+
+
 
 
